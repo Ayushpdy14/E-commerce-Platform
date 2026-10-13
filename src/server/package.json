@@ -85,7 +85,7 @@
     "@types/module-alias": "^2.0.4",
     "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.12",
-    "@types/node": "^22.15.3",
+    "@types/node": "^26.6.5",
     "@types/nodemailer": "^6.4.17",
     "@types/passport": "^1.0.17",
     "@types/passport-facebook": "^3.0.3",
