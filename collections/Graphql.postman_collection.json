@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "165b745d-5925-4620-9929-a8dfe9522130",
+		"name": "Graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-165b745d-5925-4620-9929-a8dfe9522130?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Products Query",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  product(slug: \"base-cotton-t-shirt\") {\r\n    id\r\n    name\r\n    slug\r\n    images\r\n    isNew\r\n    isFeatured\r\n    isTrending\r\n    isBestSeller\r\n    averageRating\r\n    reviewCount\r\n    description\r\n    variants {\r\n      id\r\n      sku\r\n      price\r\n      stock\r\n      lowStockThreshold\r\n      barcode\r\n      warehouseLocation\r\n      attributes {\r\n        id\r\n        attribute {\r\n          id\r\n          name\r\n          slug\r\n        }\r\n        value {\r\n          id\r\n          value\r\n          slug\r\n        }\r\n      }\r\n    }\r\n    category {\r\n      id\r\n      name\r\n      slug\r\n    }\r\n    reviews {\r\n      id\r\n      rating\r\n      comment\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Analytics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  orderAnalytics(params: { timePeriod: \"lastMonth\", year: 2025 }) {\r\n    totalOrders\r\n    totalSales\r\n    averageOrderValue\r\n    changes {\r\n      orders\r\n      sales\r\n      averageOrderValue\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Revenue Analytics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  revenueAnalytics(params: { timePeriod: \"lastYear\", year: 2025 }) {\r\n    totalRevenue\r\n    changes {\r\n      revenue\r\n    }\r\n    monthlyTrends {\r\n      labels\r\n      revenue\r\n      orders\r\n      sales\r\n      users\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Analytics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  userAnalytics(params: { timePeriod: \"lastYear\", year: 2025 }) {\r\n    totalUsers\r\n    totalRevenue\r\n    retentionRate\r\n    lifetimeValue\r\n    repeatPurchaseRate\r\n    engagementScore\r\n    topUsers {\r\n      id\r\n      name\r\n      email\r\n      orderCount\r\n      totalSpent\r\n      engagementScore\r\n    }\r\n    interactionTrends {\r\n      labels\r\n      views\r\n      clicks\r\n      others\r\n    }\r\n    changes {\r\n      users\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interaction Analytics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  interactionAnalytics(params: { timePeriod: \"last7days\", year: 2025 }) {\r\n    totalInteractions\r\n    byType {\r\n      views\r\n      clicks\r\n      others\r\n    }\r\n    mostViewedProducts {\r\n      productId\r\n      productName\r\n      viewCount\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Performance Analytics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  productPerformance(params: { timePeriod: \"lastMonth\", year: 2025 }) {\r\n    id\r\n    name\r\n    quantity\r\n    revenue\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Abandoned Cart Analytics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  abandonedCartAnalytics(params: { timePeriod: \"last7days\" }) {\r\n    totalAbandonedCarts\r\n    abandonmentRate\r\n    potentialRevenueLost\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Dashboard",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  searchDashboard(params: { searchQuery: \"shirt\" }) {\r\n    type\r\n    id\r\n    title\r\n    description\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

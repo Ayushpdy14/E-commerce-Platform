@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "1757f6a0-8808-4d1a-ae91-3142b47e96ad",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-1757f6a0-8808-4d1a-ae91-3142b47e96ad?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Get me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}users/me",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

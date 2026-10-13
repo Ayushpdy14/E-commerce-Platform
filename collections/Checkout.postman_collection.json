@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "24a845a9-ec5f-44b5-a68a-51b8fa250c6c",
+		"name": "Checkout",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-24a845a9-ec5f-44b5-a68a-51b8fa250c6c?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Initiate checkout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}checkout",
+					"host": [
+						"{{URL}}checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stripe webhook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}webhook",
+					"host": [
+						"{{URL}}webhook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

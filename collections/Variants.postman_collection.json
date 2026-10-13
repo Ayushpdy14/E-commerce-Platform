@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "4bb8a153-2162-4955-a1fe-1387766b9d25",
+		"name": "Variants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-4bb8a153-2162-4955-a1fe-1387766b9d25?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Get All Variants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}variants"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Restocks History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}variants/b08e6b6a-981c-465b-8f85-e6f3ef6ecae5/restock-history"
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Sku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}variants/sku/TSH-RED-M"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Variant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"c49be933-3325-4f43-b1e8-81bedf850f08\",\r\n    \"sku\": \"TSH-BLUE-M\",\r\n    \"price\": \"19.99\",\r\n    \"stock\": \"20\",\r\n    \"images\": [\r\n        \"https://example.com/images/blue-shirt-front.jpg\",\r\n        \"https://example.com/images/blue-shirt-back.jpg\"\r\n    ],\r\n    \"lowStockThreshold\": \"10\",\r\n    \"barcode\": \"1234325\",\r\n    \"warehouseLocation\": \"WH-1A\",\r\n    \"attributes\": [\r\n        {\r\n            // SIZE: M ATTR\r\n            \"attributeId\": \"c1830a9e-af8a-43cc-a26f-4fcb05b4db31\",\r\n            \"valueId\": \"d8153fe3-d8f9-4438-be23-bd58ab606330\"\r\n        },\r\n        {\r\n            // COlOR: BLUE ATTR\r\n            \"attributeId\": \"cfbc86b5-2327-4fa1-a6c8-32b66af2b32d\",\r\n            \"valueId\": \"c6f69c6d-d6a1-4f65-accc-43e69ebb8e13\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}variants"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Variant",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": "{{URL}}variants"
+			},
+			"response": []
+		},
+		{
+			"name": "Restock Variant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"quantity\": 2,\r\n\"notes\": \"Testing restocking variant TSH-BLUE-L \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}variants/b08e6b6a-981c-465b-8f85-e6f3ef6ecae5/restock"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Variant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{URL}}variants/e12a8beb-7a70-446b-8c39-8f393fed2dad"
+			},
+			"response": []
+		}
+	]
+}

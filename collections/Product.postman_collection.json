@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "97a342cb-2378-4720-961f-98ba262105f1",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-97a342cb-2378-4720-961f-98ba262105f1?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}products",
+					"host": [
+						"{{URL}}products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}products/294eb9e2-da1a-4847-826d-44ab6d101dd1",
+					"host": [
+						"{{URL}}products"
+					],
+					"path": [
+						"294eb9e2-da1a-4847-826d-44ab6d101dd1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Basic Cotton T-shirt\",\n    \"description\": \"Comfortable cotton t-shirt for everyday wear\",\n    \"categoryId\": \"ca51ad9d-0a82-469e-93fa-a5d52eb661ac\",\n    \"variants\": [\n        {\n            \"sku\": \"TSH-RED-M\",\n            \"price\": 19.99,\n            \"stock\": 50,\n            \"lowStockThreshold\": 10,\n            \"barcode\": \"123456789012\",\n            \"warehouseLocation\": \"WH-A1\",\n            \"attributes\": [\n                {\n                    // Size M\n                    \"attributeId\": \"300d16a7-bb23-48b1-b0f6-4b7a1304f0a2\",\n                    \"valueId\": \"3ee50d48-96a2-4c42-b14e-3464bab49c74\"\n                },\n                {\n                    // Color Red\n                    \"attributeId\": \"1ae22a10-c319-4fd2-9516-5004a62cbde4\",\n                    \"valueId\": \"5be3067b-3406-4b7f-b426-9fcfe707e4f2\"\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}products",
+					"host": [
+						"{{URL}}products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/abdelrahman-aboalkhair/Projects/WEB/code/full-stack-ecommerce/recommender/products.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}products/bulk",
+					"host": [
+						"{{URL}}products"
+					],
+					"path": [
+						"bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"updated name\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}products/294eb9e2-da1a-4847-826d-44ab6d101dd1",
+					"host": [
+						"{{URL}}products"
+					],
+					"path": [
+						"294eb9e2-da1a-4847-826d-44ab6d101dd1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}products/1a4756cc-7af6-4773-a30c-2e154227d38a",
+					"host": [
+						"{{URL}}products"
+					],
+					"path": [
+						"1a4756cc-7af6-4773-a30c-2e154227d38a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "ccb9138d-57cb-4bf1-8b03-5183d81b4d5b",
+		"name": "Orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-ccb9138d-57cb-4bf1-8b03-5183d81b4d5b?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Get all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}orders",
+					"host": [
+						"{{URL}}orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}orders",
+					"host": [
+						"{{URL}}orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get order details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}transactions/806e1e72-89f3-4b8e-8fcb-66f5f0705d4b",
+					"host": [
+						"{{URL}}transactions"
+					],
+					"path": [
+						"806e1e72-89f3-4b8e-8fcb-66f5f0705d4b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update tracking details",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}orders",
+					"host": [
+						"{{URL}}orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

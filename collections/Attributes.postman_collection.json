@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "fec89b2d-20d7-4391-b378-9d246358c26a",
+		"name": "Attributes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-fec89b2d-20d7-4391-b378-9d246358c26a?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Create attribute",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"color\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}attributes",
+					"host": [
+						"{{URL}}attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create attribute value",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"attributeId\": \"c1830a9e-af8a-43cc-a26f-4fcb05b4db31\",\n    \"value\": \"L\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}attributes/value",
+					"host": [
+						"{{URL}}attributes"
+					],
+					"path": [
+						"value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign to product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"fbd9ab07-b2bb-4470-805f-f7ec25474621\",\r\n    \"attributeId\": \"732f77b8-dc16-481f-8fb2-ee94d53eb37f\",\r\n    \"valueId\": \"3f9c1ec8-1ce1-43ea-a29e-1726885cc0ea\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}attributes/assign-product",
+					"host": [
+						"{{URL}}attributes"
+					],
+					"path": [
+						"assign-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign to category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryId\": \"831797ee-5e3f-4abe-98f8-34de1b61f681\",\r\n    \"attributeId\": \"c1830a9e-af8a-43cc-a26f-4fcb05b4db31\",\r\n    \"isRequired\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}attributes/assign-category",
+					"host": [
+						"{{URL}}attributes"
+					],
+					"path": [
+						"assign-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all attributes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}attributes",
+					"host": [
+						"{{URL}}attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get attribute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}attributes/9f92bd1b-5203-477a-9b1e-392f88db7221",
+					"host": [
+						"{{URL}}attributes"
+					],
+					"path": [
+						"9f92bd1b-5203-477a-9b1e-392f88db7221"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Attribute",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}attributes/61305256-bcb2-405e-9912-7255cee6d7db",
+					"host": [
+						"{{URL}}attributes"
+					],
+					"path": [
+						"61305256-bcb2-405e-9912-7255cee6d7db"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Attribute Value",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}attributes/value/e1607842-f72e-42c0-a8dc-2a2f3049bbaa",
+					"host": [
+						"{{URL}}attributes"
+					],
+					"path": [
+						"value",
+						"e1607842-f72e-42c0-a8dc-2a2f3049bbaa"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

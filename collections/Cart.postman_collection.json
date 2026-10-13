@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "a2302df6-f63c-4605-8acc-bf934725373a",
+		"name": "Cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-a2302df6-f63c-4605-8acc-bf934725373a?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Get cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}cart",
+					"host": [
+						"{{URL}}cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cart count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}cart/count",
+					"host": [
+						"{{URL}}cart"
+					],
+					"path": [
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Item to cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"variantId\": \"863e8f7a-f1a9-44a6-aa2e-a163f98f6b1b\",\n    \"quantity\": 1\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}cart",
+					"host": [
+						"{{URL}}cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Merge carts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mechanical Gaming Keyboard\",\n    \"description\": \"RGB backlit mechanical keyboard with hot-swappable switches and customizable macros.\",\n    \"price\": 129.99,\n    \"discount\": 5,\n    \"images\": [\n        \"https://m.media-amazon.com/images/I/81eVYnCEZNL._AC_SL1500_.jpg\",\n        \"https://m.media-amazon.com/images/I/81RYWsm+RIL._AC_SL1500_.jpg\"\n    ],\n    \"stock\": 50,\n    \"categoryId\": \"830a4b23-77f7-4d7d-92c3-caf1b8a4c12a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}cart/merge",
+					"host": [
+						"{{URL}}cart"
+					],
+					"path": [
+						"merge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update cart item quanitty",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quantity\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}cart/item/1ab0fd88-9611-4779-86e4-a29e56a3de3b",
+					"host": [
+						"{{URL}}cart"
+					],
+					"path": [
+						"item",
+						"1ab0fd88-9611-4779-86e4-a29e56a3de3b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Item from cart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"productId\": \"294eb9e2-da1a-4847-826d-44ab6d101dd1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}cart/item/d753f885-d5e4-4174-b390-c04fbc227574",
+					"host": [
+						"{{URL}}cart"
+					],
+					"path": [
+						"item",
+						"d753f885-d5e4-4174-b390-c04fbc227574"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

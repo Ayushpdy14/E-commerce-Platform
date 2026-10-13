@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "4b4d187c-03f5-49df-9c68-4bfea7a0439f",
+		"name": "Analytics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36629083",
+		"_collection_link": "https://www.postman.com/kgkraft-api-team/workspace/single-store-ecommerce/collection/36629083-4b4d187c-03f5-49df-9c68-4bfea7a0439f?action=share&source=collection_link&creator=36629083"
+	},
+	"item": [
+		{
+			"name": "Get overview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}analytics/overview?timePeriod=lastMonth",
+					"host": [
+						"{{URL}}analytics"
+					],
+					"path": [
+						"overview"
+					],
+					"query": [
+						{
+							"key": "timePeriod",
+							"value": "lastMonth"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Year range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}analytics/year-range",
+					"host": [
+						"{{URL}}analytics"
+					],
+					"path": [
+						"year-range"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product performance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}analytics/products",
+					"host": [
+						"{{URL}}analytics"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Analytics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}analytics/customers?timePeriod=last7days",
+					"host": [
+						"{{URL}}analytics"
+					],
+					"path": [
+						"customers"
+					],
+					"query": [
+						{
+							"key": "timePeriod",
+							"value": "last7days"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}analytics/interactions?timePeriod=last7days",
+					"host": [
+						"{{URL}}analytics"
+					],
+					"path": [
+						"interactions"
+					],
+					"query": [
+						{
+							"key": "timePeriod",
+							"value": "last7days"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}analytics/export?type=overview&format=pdf&timePeriod=lastMonth",
+					"host": [
+						"{{URL}}analytics"
+					],
+					"path": [
+						"export"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "overview"
+						},
+						{
+							"key": "format",
+							"value": "pdf"
+						},
+						{
+							"key": "timePeriod",
+							"value": "lastMonth"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
